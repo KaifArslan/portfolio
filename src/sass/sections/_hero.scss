@@ -1,0 +1,122 @@
+#hero {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 0px;
+  background: var(--white-color);
+  font-weight: 400;
+  color: var(--dark-blue-text);
+  padding: 0rem 5.6rem;
+  margin-bottom: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+
+  // Set position sticky so the jumbotron stays fixed while you scroll.
+  // position: sticky;
+
+  // If you want to set a background image on the hero section, uncomment these with your custom image
+
+  /* background: url("/src/assets/[your-image].png");
+  background-position: center;
+  background-size: cover; */
+
+  @include respond(phone) {
+    padding: 0rem $default-font-size;
+  }
+
+  .hero-title {
+    font-size: 5.6rem;
+    font-weight: 700;
+    margin-bottom: 3.2rem;
+    text-align: left;
+
+    @include respond(tab-land) {
+      font-size: 4rem;
+    }
+    @include respond(tab-port) {
+      font-size: 3.6rem;
+      text-align: center;
+    }
+    @include respond(phone) {
+      font-size: 3.5rem;
+      line-height: 1.5;
+    }
+    @include respond(phone-xs) {
+      font-size: 2.8rem;
+    }
+  }
+
+  .hero-cta {
+    display: flex;
+
+    @include respond(tab-port) {
+      justify-content: center;
+    }
+
+    & a {
+      font-size: 2.4rem;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+// new comment
+/* Typewriter effect 1 */
+@keyframes typing {
+  0.0000%, 49.9999% { content: ""; }
+  1.1395%, 48.8605% { content: "S"; }
+  2.2791%, 47.7209% { content: "So"; }
+  3.4186%, 46.5814% { content: "Sof"; }
+  4.5581%, 45.4419% { content: "Soft"; }
+  5.6977%, 44.3023% { content: "Softw"; }
+  6.8372%, 43.1628% { content: "Softwa"; }
+  7.9767%, 42.0232% { content: "Softwar"; }
+  9.1163%, 40.8837% { content: "Software"; }
+
+  50.0000%, 100% { content: ""; }
+  51.1395%, 98.8605% { content: "F"; }
+  52.2791%, 97.7209% { content: "Fr"; }
+  53.4186%, 96.5814% { content: "Fro"; }
+  54.5581%, 95.4419% { content: "Fron"; }
+  55.6977%, 94.3023% { content: "Front"; }
+  56.8372%, 93.1628% { content: "Fronte"; }
+  57.9767%, 92.0232% { content: "Frontend"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: currentcolor;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 12s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 2px solid var(--caret);
+  animation: blink 1s linear infinite;
+}
+@media (prefers-reduced-motion) {
+  @keyframes sequencePopup {
+    0%, 100% { content: "Software"; }
+    50% { content: "Frontend"; }
+  }
+
+  .typewriter::before {
+    content: "Software";
+    animation: sequencePopup 8s linear infinite;
+  }
+}

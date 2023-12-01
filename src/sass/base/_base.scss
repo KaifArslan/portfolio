@@ -1,0 +1,95 @@
+html {
+  font-size: 62.5%;
+
+  &.sr .load-hidden {
+    visibility: hidden;
+  }
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--light-grey);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+// --------------------------------
+.checkbox {
+  opacity: 0;
+  position: absolute;
+
+}
+
+.checkbox-label {
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid darkgrey
+  
+}
+
+.fa-moon-o {
+  color: rgb(60, 60, 132);
+  font-size: 17px;
+  font-weight: bolder;
+}
+
+.fa-sun-o {
+  color: rgb(126, 126, 1);
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.checkbox-label .ball {
+  background-color: rgb(5, 29, 40);
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+
+body.dark {
+
+    --primary-color: #393053;
+    --secondary-color: #443C68;
+  
+    --dark-grey: #333333;
+    --light-grey: #d2d2d2;
+  
+    --dark-blue-text: #FAF0E6;
+    
+    --white-color: #635985;
+     
+}
+#top{
+  position: absolute;
+  right: 20%;
+
+}
